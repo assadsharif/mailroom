@@ -1,0 +1,5 @@
+# Changes to sending code need approval from a code owner.
+# Replace @your-github-username with your own GitHub username, or your classmate's.
+src/mailroom/send.py      @your-github-username
+src/mailroom/guard.py     @your-github-username
+src/mailroom/policy.py    @your-github-username

@@ -3,7 +3,7 @@
 Write each prediction before the run. Never change it afterwards.
 
 ## Step 0 · The base
-Name and audience:
+Name and audience: Kettlebird Tea's Steep Club, for tea lovers.
 Prediction:
 
 ## Step 1 · Count your subscribers

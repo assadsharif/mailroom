@@ -17,8 +17,8 @@ Total and per group:
 Gave consent: 24
 
 ## Step 2 · Dates
-Does 2026-10-21 count in the last 30 days?
-First Monday of December 2026 and the send after it:
+Does 2026-10-21 count in the last 30 days? Yes. With the run date 2026-11-20 the window starts on 2026-10-21, so that day counts and 2026-10-20 does not. 7 subscribers fall inside it.
+First Monday of December 2026 and the send after it: 2026-12-07, and the send after that is 2027-01-04.
 
 ## Step 3 · Reading an error
 Will it crash? Last line of the error:

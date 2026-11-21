@@ -22,6 +22,7 @@ from mailroom.subscribers import (
     GROUPS,
     RowProblem,
     count_by_group,
+    joined_from,
     joined_since,
     meaning_problems,
     read_rows,
@@ -48,6 +49,9 @@ def cmd_subscribers(args: argparse.Namespace) -> int:
     if args.since_days is not None:
         recent = joined_since(subscribers, _run_date(args.run_date), args.since_days)
         print(f"Joined in the last {args.since_days} days: {len(recent)}")
+    if args.since is not None:
+        joined = joined_from(subscribers, args.since)
+        print(f"Joined since {args.since}: {len(joined)}")
     _print_problems(problems)
     return 1 if problems else 0
 
@@ -145,6 +149,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub = commands.add_parser("subscribers", help="count subscribers")
     sub.add_argument("--file", type=Path, default=DEFAULT_SUBSCRIBERS)
     sub.add_argument("--since-days", type=int)
+    sub.add_argument("--since", type=date.fromisoformat)
     sub.add_argument("--run-date", type=date.fromisoformat)
     sub.set_defaults(handler=cmd_subscribers)
 

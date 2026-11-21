@@ -77,6 +77,11 @@ def joined_since(subscribers: list[Subscriber], run_date: date, days: int) -> li
     return [s for s in subscribers if joined_within(s.joined_on, run_date, days)]
 
 
+def joined_from(subscribers: list[Subscriber], since: date) -> list[Subscriber]:
+    """Subscribers who joined on or after `since`."""
+    return [s for s in subscribers if s.joined_on >= since]
+
+
 def meaning_problems(subscriber: Subscriber, run_date: date) -> list[str]:
     """Our own rules, which a shape check cannot know."""
     problems: list[str] = []

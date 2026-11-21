@@ -9,6 +9,11 @@ Prediction:
 ## Step 1 · Count your subscribers
 Total and per group:
 
+- Total: 24
+- tea-curious: 8
+- gift-buyers: 8
+- daily-drinkers: 8
+
 ## Step 2 · Dates
 Does 2026-10-21 count in the last 30 days?
 First Monday of December 2026 and the send after it:

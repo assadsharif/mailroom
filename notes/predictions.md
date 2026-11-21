@@ -14,6 +14,8 @@ Total and per group:
 - gift-buyers: 8
 - daily-drinkers: 8
 
+Gave consent: 24
+
 ## Step 2 · Dates
 Does 2026-10-21 count in the last 30 days?
 First Monday of December 2026 and the send after it:

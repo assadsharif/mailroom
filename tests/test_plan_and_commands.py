@@ -29,6 +29,13 @@ def test_subscribers_command_prints_total_and_recent(capsys):
     assert "Joined in the last 30 days: 7" in out
 
 
+def test_subscribers_command_counts_from_an_exact_date(capsys):
+    code = main(["subscribers", "--file", str(SUBSCRIBERS), "--since", "2026-10-01"])
+    out = capsys.readouterr().out
+    assert code == 0
+    assert "Joined since 2026-10-01: 12" in out
+
+
 def test_next_send_command(capsys):
     main(["next-send", "--run-date", "2026-11-20"])
     assert capsys.readouterr().out.strip() == "2026-12-07"

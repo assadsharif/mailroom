@@ -46,6 +46,17 @@ def test_subject_of_exactly_50_characters_is_allowed():
     assert len("Your Steep Club box ships on Monday with new teas.") == 50
 
 
+def test_subject_of_50_characters_with_surrounding_spaces_is_allowed():
+    subject = "Your Steep Club box ships on Monday with new teas."
+    text = replace_line("Subject:", f"Subject:  {subject}  ")
+    assert len(check_subject(Issue.parse(text))) == 0
+
+
+def test_a_subject_that_is_not_the_first_line_is_a_problem():
+    text = "Preview: Your monthly tea box.\nSubject: The Steep Club opens Monday\n\nHi {{first_name}},\n"
+    assert len(check_subject(Issue.parse(text))) == 1
+
+
 def test_emoji_counts_as_python_len_counts():
     subject = "👍🏽 Thanks for joining"
     assert len(subject) == 21

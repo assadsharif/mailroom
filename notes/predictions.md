@@ -23,6 +23,11 @@ First Monday of December 2026 and the send after it: 2026-12-07, and the send af
 ## Step 3 · Reading an error
 Will it crash? Last line of the error:
 
+## Step 4 · Real tests
+How many tests after the move, one per behavior: 14.
+
+One for each behavior: 24 in total; 8 in each of the three groups; 7 joined in the last 30 days; 2026-10-21 counts and 2026-10-20 does not; the next send for 2026-11-20, 2026-12-07 and 2026-12-31; --since 2026-10-01 gives 12; the subscribers command; the next-send command; a bad row reported with its row number.
+
 ## Step 5 · Tests first
 Expected answers for the six subject cases:
 

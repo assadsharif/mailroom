@@ -15,16 +15,16 @@ class Issue:
 
     @classmethod
     def parse(cls, text: str) -> "Issue":
+        lines = text.splitlines()
         subject: str | None = None
         preview: str | None = None
-        body_lines: list[str] = []
-        for line in text.splitlines():
-            if subject is None and line.startswith("Subject:"):
-                subject = line[len("Subject:"):].strip()
-            elif preview is None and line.startswith("Preview:"):
-                preview = line[len("Preview:"):].strip()
-            else:
-                body_lines.append(line)
+        body_lines = lines
+        if lines and lines[0].startswith("Subject:"):
+            subject = lines[0][len("Subject:"):].strip()
+            body_lines = lines[1:]
+            if body_lines and body_lines[0].startswith("Preview:"):
+                preview = body_lines[0][len("Preview:"):].strip()
+                body_lines = body_lines[1:]
         return cls(subject, preview, "\n".join(body_lines).strip())
 
     @classmethod

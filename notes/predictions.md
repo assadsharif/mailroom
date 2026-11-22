@@ -31,6 +31,13 @@ One for each behavior: 24 in total; 8 in each of the three groups; 7 joined in t
 ## Step 5 · Tests first
 Expected answers for the six subject cases:
 
+- "The Steep Club opens Monday": no problems.
+- "Your Steep Club box ships on Monday with new teas." (exactly 50 characters): no problems.
+- "Your Steep Club box ships on Monday with fresh teas" (51 characters): one problem, too long.
+- "Subject:" with nothing after it: one problem, empty.
+- "Subject:" followed by spaces only: one problem, empty.
+- no Subject line at all: one problem, missing.
+
 ## Step 7 · The rest of the rules
 Two cases per rule:
 

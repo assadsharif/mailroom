@@ -39,7 +39,26 @@ Expected answers for the six subject cases:
 - no Subject line at all: one problem, missing.
 
 ## Step 7 · The rest of the rules
-Two cases per rule:
+Two cases per rule. `issues/issue-01.md` is the all-good case.
+
+### Preview
+- 90 characters: no problems.
+- 91 characters: one problem, too long.
+
+### Greeting
+- `Hi {{first_name}},` in the body: no problems.
+- `Hi Friend,` in the body: one problem, no `{{first_name}}`.
+
+### Links
+- Two `[...](https://...)` links: one problem, expected exactly one.
+- One `[...](http://...)` link: one problem, it must use https. It still counts as a link.
+
+### Footer
+- Both footer lines present: no problems.
+- The `You're getting this because` line missing, the unsubscribe line present: one problem.
+
+### Two problems at once
+- The real issue with `{{first_name}}` replaced by `Friend` and the `You're getting this because` line removed: two problems (greeting, footer reason line). Removing the whole footer would be three under the current code, because it reports the two footer lines separately.
 
 ## Step 8 · Modules
 Which tests break when the code moves, and why:

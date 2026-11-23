@@ -95,4 +95,4 @@ def test_footer_needs_the_reason_line_and_the_unsubscribe_line():
 def test_no_footer_and_no_greeting_are_two_problems():
     text = ISSUE_TEXT.replace("{{first_name}}", "Friend")
     text = text.replace("You're getting this because", "Bye").replace("Unsubscribe: {{unsubscribe_url}}", "")
-    assert len(check_issue(Issue.parse(text))) == 3
+    assert len(check_issue(Issue.parse(text))) == 2

@@ -28,6 +28,7 @@ Mailroom is a command-line tool for one newsletter: Kettlebird Tea's Steep Club.
 - Subject and preview length count what Python's len() counts.
 - Report every problem with its row. No traceback for a user's mistake.
 - Links must use https.
+- The greeting must be in the first line of the body.
 
 ## Data
 - Data from outside goes through the model before any code uses it. The model checks the shape. Our own rules check the meaning.

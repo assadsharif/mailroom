@@ -46,6 +46,12 @@ My cases:
 - two links: one problem. A link starting `http://` still counts as a link.
 - no footer, and no greeting: two problems.
 
+## How long is an emoji?
+- A reader sees: 20 characters.
+- Python's `len()` says: 21.
+
+`👍🏽` looks like one character, but it is two code points: 👍 and the skin-tone modifier 🏽.
+
 ## Step 8 · Modules
 Which tests break when the code moves, and why:
 

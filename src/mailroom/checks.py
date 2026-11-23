@@ -28,8 +28,9 @@ def check_preview(issue: Issue) -> list[str]:
 
 
 def check_greeting(issue: Issue) -> list[str]:
-    if "{{first_name}}" not in issue.body:
-        return ["no {{first_name}} greeting in the body"]
+    lines = issue.body.splitlines()
+    if not lines or "{{first_name}}" not in lines[0]:
+        return ["no {{first_name}} greeting in the first line of the body"]
     return []
 
 

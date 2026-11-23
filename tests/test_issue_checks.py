@@ -75,6 +75,12 @@ def test_greeting_rule():
     assert len(check_greeting(Issue.parse(text))) == 1
 
 
+def test_first_name_only_in_footer_is_not_a_greeting():
+    text = ISSUE_TEXT.replace("Hi {{first_name}},", "Hi Friend,")
+    text = text.replace("You're getting this because you joined", "You're getting this because {{first_name}} joined")
+    assert len(check_greeting(Issue.parse(text))) == 1
+
+
 def test_two_links_is_a_problem():
     text = ISSUE_TEXT + "\n[Second](https://kettlebird.example/other)\n"
     assert len(check_links(Issue.parse(text))) == 1

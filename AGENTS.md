@@ -4,7 +4,7 @@ Mailroom is a command-line tool for one newsletter: Kettlebird Tea's Steep Club.
 
 ## How I learn
 
-- I am new to Python. I have completed up to 13.11 of https://agentfactory.panaversity.org/building-ai-workers/programming-fundamentals/ and I update this number as I learn.
+- I am new to Python. I have completed up to 13.12 of https://agentfactory.panaversity.org/building-ai-workers/programming-fundamentals/ and I update this number as I learn.
 - Write only with what I have learned. If something new would really help, stop and tell me its name in one line. I decide.
 - When the code uses something new, show me that piece first and ask me to predict what it does. Stay quiet while I guess. Then run it, and explain a line only when I ask.
 
@@ -28,6 +28,7 @@ Mailroom is a command-line tool for one newsletter: Kettlebird Tea's Steep Club.
 - Subject and preview length count what Python's len() counts.
 - Report every problem with its row. No traceback for a user's mistake.
 - Links must use https.
+- The greeting must be in the first line of the body.
 
 ## Data
 - Data from outside goes through the model before any code uses it. The model checks the shape. Our own rules check the meaning.

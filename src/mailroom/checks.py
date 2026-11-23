@@ -46,12 +46,14 @@ def check_links(issue: Issue) -> list[str]:
 
 def check_footer(issue: Issue) -> list[str]:
     lines = issue.body.splitlines()
-    problems: list[str] = []
+    missing: list[str] = []
     if not any(line.startswith("You're getting this because") for line in lines):
-        problems.append("footer is missing the line starting \"You're getting this because\"")
+        missing.append('the line starting "You\'re getting this because"')
     if not any("Unsubscribe: {{unsubscribe_url}}" in line for line in lines):
-        problems.append("footer is missing \"Unsubscribe: {{unsubscribe_url}}\"")
-    return problems
+        missing.append('"Unsubscribe: {{unsubscribe_url}}"')
+    if missing:
+        return ["footer is missing " + " and ".join(missing)]
+    return []
 
 
 def check_issue(issue: Issue) -> list[str]:

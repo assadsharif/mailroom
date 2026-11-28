@@ -53,7 +53,9 @@ My cases:
 `👍🏽` looks like one character, but it is two code points: 👍 and the skin-tone modifier 🏽.
 
 ## Step 8 · Modules
-Which tests break when the code moves, and why:
+My prediction: an import error, because the path changed.
+
+The tests that import from the old module path fail with `ModuleNotFoundError` / `ImportError` before their assertions run. The test bodies do not change; only the import lines do.
 
 ## Step 9 · Types
 Crash or wrong answer? Which is worse:

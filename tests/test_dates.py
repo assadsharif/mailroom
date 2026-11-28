@@ -23,3 +23,7 @@ def test_joined_on_20_october_does_not_count_in_the_last_30_days():
 )
 def test_next_send_is_the_first_monday_of_the_next_month(run_date, expected):
     assert next_send(run_date) == expected
+
+
+def test_run_date_is_a_date_not_text():
+    assert joined_within(date(2026, 10, 21), date(2026, 11, 20), 30)

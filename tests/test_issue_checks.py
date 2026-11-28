@@ -102,3 +102,15 @@ def test_no_footer_and_no_greeting_are_two_problems():
     text = ISSUE_TEXT.replace("{{first_name}}", "Friend")
     text = text.replace("You're getting this because", "Bye").replace("Unsubscribe: {{unsubscribe_url}}", "")
     assert len(check_issue(Issue.parse(text))) == 2
+
+
+def test_the_real_issue_has_exactly_one_link() -> None:
+    assert Issue.parse(ISSUE_TEXT).links == ["https://kettlebird.example/steep-club"]
+
+
+def test_personalize_fills_the_name_and_leaves_the_unsubscribe_url() -> None:
+    text = "Subject: x\nPreview: y\n\nHi {{first_name}},\n\nUnsubscribe: {{unsubscribe_url}}\n"
+    body = Issue.parse(text).personalize("Ayesha")
+    assert "Hi Ayesha," in body
+    assert "{{first_name}}" not in body
+    assert "{{unsubscribe_url}}" in body
